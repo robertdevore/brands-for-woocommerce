@@ -1,0 +1,124 @@
+.widget-brand-thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.brand-thumbnail {
+    text-align: center;
+    width: 200px;
+}
+
+.brand-thumbnail img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.brand-thumbnail-name {
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.brand-thumbnail-description {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.product-brand-grid {
+    display: grid;
+    gap: 20px;
+    justify-items: center;
+}
+
+.product-brand-grid[data-columns="2"] {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.product-brand-grid[data-columns="3"] {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.product-brand-grid[data-columns="4"] {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (min-width: 1024px) {
+    .product-brand-grid[data-columns="auto"] {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+.product-brand-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12;
+}
+
+.product-brand-item .brand-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.product-brand-item .brand-name {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.product-brand-grid .brand-description {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.brand-index-menu {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.brand-index-menu a {
+    margin: 0 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+.brand-index-menu a:hover {
+    color: #222;
+}
+
+.brands-list {
+    margin-top: 20px;
+}
+
+.brands-list h2 {
+    font-size: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+.brands-list ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.brands-list ul li {
+    padding: 5px 0;
+}
+
+.brands-list ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.brands-list ul li a:hover {
+    color: #222;
+}
