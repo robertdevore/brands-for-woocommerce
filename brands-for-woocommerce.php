@@ -53,6 +53,21 @@ new WPComPluginHandler( plugin_basename( __FILE__ ), 'https://robertdevore.com/w
 define('BRANDS_FOR_WOOCOMMERCE_VERSION', '1.0.0' );
 
 /**
+ * Load plugin text domain for translations
+ * 
+ * @since  1.0.1
+ * @return void
+ */
+function brands_woocommerce_load_textdomain() {
+    load_plugin_textdomain( 
+        'brands-for-woocommerce',
+        false,
+        dirname( plugin_basename( __FILE__ ) ) . '/languages/'
+    );
+}
+add_action( 'plugins_loaded', 'brands_woocommerce_load_textdomain' );
+
+/**
  * Main Brands_For_WooCommerce class.
  * 
  * @since 1.0.0
