@@ -1,0 +1,142 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Brands for WooCommerce®\n"
+"POT-Creation-Date: 2025-02-21 17:06-0500\n"
+"PO-Revision-Date: 2025-02-21 17:07-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: brands-for-woocommerce.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+
+#: brands-for-woocommerce.php:149
+msgid "Select Brand Image"
+msgstr "Selezionare l'immagine del marchio"
+
+#: brands-for-woocommerce.php:151
+msgid "Use this image"
+msgstr "Utilizzare questa immagine"
+
+#: brands-for-woocommerce.php:182 brands-for-woocommerce.php:210
+msgid "Brand Image"
+msgstr "Immagine Marchio"
+
+#: brands-for-woocommerce.php:183 brands-for-woocommerce.php:217
+msgid "Upload Image"
+msgstr "Carica immagine"
+
+#: brands-for-woocommerce.php:186 brands-for-woocommerce.php:219
+msgid "Upload an image for this brand."
+msgstr "Caricare un'immagine per questo marchio."
+
+#: brands-for-woocommerce.php:189 brands-for-woocommerce.php:223
+msgid "Brand Website URL"
+msgstr "URL del sito web del marchio"
+
+#: brands-for-woocommerce.php:191 brands-for-woocommerce.php:226
+msgid "Enter the URL for this brand's website."
+msgstr "Inserite l'URL del sito web di questo marchio."
+
+#: brands-for-woocommerce.php:286
+msgctxt "taxonomy general name"
+msgid "Brands"
+msgstr "Marchi"
+
+#: brands-for-woocommerce.php:287
+msgctxt "taxonomy singular name"
+msgid "Brand"
+msgstr "Marchio"
+
+#: brands-for-woocommerce.php:288
+msgid "Search Brands"
+msgstr "Cerca Marchi"
+
+#: brands-for-woocommerce.php:289
+msgid "All Brands"
+msgstr "Tutti i Marchi"
+
+#: brands-for-woocommerce.php:290
+msgid "Edit Brand"
+msgstr "Modifica Marchio"
+
+#: brands-for-woocommerce.php:291
+msgid "Add New Brand"
+msgstr "Aggiungi nuovo marchio"
+
+#: brands-for-woocommerce.php:341 brands-for-woocommerce.php:473
+#: classes/Brand_Thumbnail_Widget.php:103
+msgid "No brands available."
+msgstr "Nessun marchio disponibile."
+
+#: brands-for-woocommerce.php:437
+msgid "No products found for this brand."
+msgstr "Nessun prodotto trovato per questo marchio."
+
+#: classes/Brand_Thumbnail_Widget.php:26
+msgid "Brand Thumbnails Widget"
+msgstr "Widget per le miniature dei marchi"
+
+#: classes/Brand_Thumbnail_Widget.php:28
+msgid ""
+"Displays brand thumbnails with options to show/hide brand names and "
+"descriptions, limit results, and randomize output."
+msgstr ""
+"Visualizza le miniature dei marchi con le opzioni per mostrare/nascondere "
+"i nomi dei marchi e le descrizioni, limitare i risultati e randomizzare "
+"l'output."
+
+#: classes/Brand_Thumbnail_Widget.php:46
+msgid "Brands"
+msgstr "Marchi"
+
+#: classes/Brand_Thumbnail_Widget.php:126
+msgid "Show Brand Name"
+msgstr "Mostra il nome del marchio"
+
+#: classes/Brand_Thumbnail_Widget.php:130
+msgid "Show Brand Description"
+msgstr "Mostra la descrizione del marchio"
+
+#: classes/Brand_Thumbnail_Widget.php:133
+msgid "Number of Brands to Display:"
+msgstr "Numero di marchi da visualizzare:"
+
+#: classes/Brand_Thumbnail_Widget.php:138
+msgid "Randomize Brands Display Order"
+msgstr "Randomizzare l'ordine di visualizzazione dei marchi"
+
+#. Plugin Name of the plugin/theme
+msgid "Brands for WooCommerce®"
+msgstr "Marchi per WooCommerce"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/robertdevore/brands-for-woocommerce/"
+msgstr "https://github.com/robertdevore/brands-for-woocommerce/"
+
+#. Description of the plugin/theme
+msgid ""
+"Allows you to create and manage brands in WooCommerce®, with options to "
+"display brands as lists, thumbnails, or sidebar widgets."
+msgstr ""
+"Permette di creare e gestire i marchi in WooCommerce®, con la possibilità "
+"di visualizzarli come elenchi, miniature o widget della barra laterale."
+
+#. Author of the plugin/theme
+msgid "Robert DeVore"
+msgstr "Robert DeVore"
+
+#. Author URI of the plugin/theme
+msgid "https://robertdevore.com/"
+msgstr "https://robertdevore.com/"
