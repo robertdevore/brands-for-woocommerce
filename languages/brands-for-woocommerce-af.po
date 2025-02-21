@@ -1,0 +1,141 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Brands for WooCommerce®\n"
+"POT-Creation-Date: 2025-02-21 18:56-0500\n"
+"PO-Revision-Date: 2025-02-21 18:59-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: af\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: brands-for-woocommerce.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+
+#: brands-for-woocommerce.php:149
+msgid "Select Brand Image"
+msgstr "Kies handelsmerkbeeld"
+
+#: brands-for-woocommerce.php:151
+msgid "Use this image"
+msgstr "Gebruik hierdie beeld"
+
+#: brands-for-woocommerce.php:182 brands-for-woocommerce.php:210
+msgid "Brand Image"
+msgstr "Handelsmerkbeeld"
+
+#: brands-for-woocommerce.php:183 brands-for-woocommerce.php:217
+msgid "Upload Image"
+msgstr "Laai prent op"
+
+#: brands-for-woocommerce.php:186 brands-for-woocommerce.php:219
+msgid "Upload an image for this brand."
+msgstr "Laai 'n prent vir hierdie handelsmerk op."
+
+#: brands-for-woocommerce.php:189 brands-for-woocommerce.php:223
+msgid "Brand Website URL"
+msgstr "Handelsmerk webwerf URL"
+
+#: brands-for-woocommerce.php:191 brands-for-woocommerce.php:226
+msgid "Enter the URL for this brand's website."
+msgstr "Voer die URL vir hierdie handelsmerk se webwerf in."
+
+#: brands-for-woocommerce.php:286
+msgctxt "taxonomy general name"
+msgid "Brands"
+msgstr "Handelsmerke"
+
+#: brands-for-woocommerce.php:287
+msgctxt "taxonomy singular name"
+msgid "Brand"
+msgstr "Handelsmerk"
+
+#: brands-for-woocommerce.php:288
+msgid "Search Brands"
+msgstr "Soek handelsmerke"
+
+#: brands-for-woocommerce.php:289
+msgid "All Brands"
+msgstr "Alle handelsmerke"
+
+#: brands-for-woocommerce.php:290
+msgid "Edit Brand"
+msgstr "Wysig handelsmerk"
+
+#: brands-for-woocommerce.php:291
+msgid "Add New Brand"
+msgstr "Voeg nuwe handelsmerk by"
+
+#: brands-for-woocommerce.php:341 brands-for-woocommerce.php:473
+#: classes/Brand_Thumbnail_Widget.php:103
+msgid "No brands available."
+msgstr "Geen handelsmerke beskikbaar nie."
+
+#: brands-for-woocommerce.php:437
+msgid "No products found for this brand."
+msgstr "Geen produkte vir hierdie handelsmerk gevind nie."
+
+#: classes/Brand_Thumbnail_Widget.php:26
+msgid "Brand Thumbnails Widget"
+msgstr "Merk-kleinkiekies-legstuk"
+
+#: classes/Brand_Thumbnail_Widget.php:28
+msgid ""
+"Displays brand thumbnails with options to show/hide brand names and "
+"descriptions, limit results, and randomize output."
+msgstr ""
+"Vertoon handelsmerk-kleinkiekies met opsies om handelsname en beskrywings "
+"te wys/versteek, resultate te beperk en uitset ewekansig te maak."
+
+#: classes/Brand_Thumbnail_Widget.php:46
+msgid "Brands"
+msgstr "Handelsmerke"
+
+#: classes/Brand_Thumbnail_Widget.php:126
+msgid "Show Brand Name"
+msgstr "Wys Handelsnaam"
+
+#: classes/Brand_Thumbnail_Widget.php:130
+msgid "Show Brand Description"
+msgstr "Wys handelsmerkbeskrywing"
+
+#: classes/Brand_Thumbnail_Widget.php:133
+msgid "Number of Brands to Display:"
+msgstr "Aantal handelsmerke om te vertoon:"
+
+#: classes/Brand_Thumbnail_Widget.php:138
+msgid "Randomize Brands Display Order"
+msgstr "Randomiseer handelsmerkvertoonbestelling"
+
+#. Plugin Name of the plugin/theme
+msgid "Brands for WooCommerce®"
+msgstr "Handelsmerke vir WooCommerce®"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/robertdevore/brands-for-woocommerce/"
+msgstr "https://github.com/robertdevore/brands-for-woocommerce/"
+
+#. Description of the plugin/theme
+msgid ""
+"Allows you to create and manage brands in WooCommerce®, with options to "
+"display brands as lists, thumbnails, or sidebar widgets."
+msgstr ""
+"Laat jou toe om handelsmerke in WooCommerce® te skep en te bestuur, met "
+"opsies om handelsmerke as lyste, duimnaels of sidebar-legstukke te vertoon."
+
+#. Author of the plugin/theme
+msgid "Robert DeVore"
+msgstr "Robert DeVore"
+
+#. Author URI of the plugin/theme
+msgid "https://robertdevore.com/"
+msgstr "https://robertdevore.com/"
