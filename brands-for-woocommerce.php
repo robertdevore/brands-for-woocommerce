@@ -146,9 +146,9 @@ class Brands_For_WooCommerce {
                 jQuery(document).ready(function($) {
                     function openMediaUploader(inputField, previewElement) {
                         const customUploader = wp.media({
-                            title: '<?php echo esc_js( __( "Select Brand Image", "brands-for-woocommerce" ) ); ?>',
+                            title: '<?php esc_html_e( __( "Select Brand Image", "brands-for-woocommerce" ) ); ?>',
                             button: {
-                                text: '<?php echo esc_js( __( "Use this image", "brands-for-woocommerce" ) ); ?>'
+                                text: '<?php esc_html_e( __( "Use this image", "brands-for-woocommerce" ) ); ?>'
                             },
                             multiple: false
                         }).on('select', function() {

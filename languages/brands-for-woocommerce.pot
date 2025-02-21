@@ -2,15 +2,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Brands for WooCommerce®\n"
-"POT-Creation-Date: 2024-11-15 02:43-0500\n"
-"PO-Revision-Date: 2024-11-15 02:43-0500\n"
+"POT-Creation-Date: 2025-02-21 16:48-0500\n"
+"PO-Revision-Date: 2025-02-21 16:48-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: brands-for-woocommerce.php\n"
@@ -22,96 +22,96 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 
-#: brands-for-woocommerce.php:123
+#: brands-for-woocommerce.php:149
 msgid "Select Brand Image"
 msgstr ""
 
-#: brands-for-woocommerce.php:125
+#: brands-for-woocommerce.php:151
 msgid "Use this image"
 msgstr ""
 
-#: brands-for-woocommerce.php:156 brands-for-woocommerce.php:184
+#: brands-for-woocommerce.php:182 brands-for-woocommerce.php:210
 msgid "Brand Image"
 msgstr ""
 
-#: brands-for-woocommerce.php:157 brands-for-woocommerce.php:191
+#: brands-for-woocommerce.php:183 brands-for-woocommerce.php:217
 msgid "Upload Image"
 msgstr ""
 
-#: brands-for-woocommerce.php:160 brands-for-woocommerce.php:193
+#: brands-for-woocommerce.php:186 brands-for-woocommerce.php:219
 msgid "Upload an image for this brand."
 msgstr ""
 
-#: brands-for-woocommerce.php:163 brands-for-woocommerce.php:197
+#: brands-for-woocommerce.php:189 brands-for-woocommerce.php:223
 msgid "Brand Website URL"
 msgstr ""
 
-#: brands-for-woocommerce.php:165 brands-for-woocommerce.php:200
+#: brands-for-woocommerce.php:191 brands-for-woocommerce.php:226
 msgid "Enter the URL for this brand's website."
 msgstr ""
 
-#: brands-for-woocommerce.php:260
+#: brands-for-woocommerce.php:286
 msgctxt "taxonomy general name"
 msgid "Brands"
 msgstr ""
 
-#: brands-for-woocommerce.php:261
+#: brands-for-woocommerce.php:287
 msgctxt "taxonomy singular name"
 msgid "Brand"
 msgstr ""
 
-#: brands-for-woocommerce.php:262
+#: brands-for-woocommerce.php:288
 msgid "Search Brands"
 msgstr ""
 
-#: brands-for-woocommerce.php:263
+#: brands-for-woocommerce.php:289
 msgid "All Brands"
 msgstr ""
 
-#: brands-for-woocommerce.php:264
+#: brands-for-woocommerce.php:290
 msgid "Edit Brand"
 msgstr ""
 
-#: brands-for-woocommerce.php:265
+#: brands-for-woocommerce.php:291
 msgid "Add New Brand"
 msgstr ""
 
-#: brands-for-woocommerce.php:315 brands-for-woocommerce.php:447
-#: brands-for-woocommerce.php:686
+#: brands-for-woocommerce.php:341 brands-for-woocommerce.php:473
+#: classes/Brand_Thumbnail_Widget.php:103
 msgid "No brands available."
 msgstr ""
 
-#: brands-for-woocommerce.php:411
+#: brands-for-woocommerce.php:437
 msgid "No products found for this brand."
 msgstr ""
 
-#: brands-for-woocommerce.php:609
+#: classes/Brand_Thumbnail_Widget.php:26
 msgid "Brand Thumbnails Widget"
 msgstr ""
 
-#: brands-for-woocommerce.php:611
+#: classes/Brand_Thumbnail_Widget.php:28
 msgid ""
 "Displays brand thumbnails with options to show/hide brand names and "
 "descriptions, limit results, and randomize output."
 msgstr ""
 
-#: brands-for-woocommerce.php:629
+#: classes/Brand_Thumbnail_Widget.php:46
 msgid "Brands"
 msgstr ""
 
-#: brands-for-woocommerce.php:709
+#: classes/Brand_Thumbnail_Widget.php:126
 msgid "Show Brand Name"
 msgstr ""
 
-#: brands-for-woocommerce.php:713
+#: classes/Brand_Thumbnail_Widget.php:130
 msgid "Show Brand Description"
 msgstr ""
 
-#: brands-for-woocommerce.php:716
+#: classes/Brand_Thumbnail_Widget.php:133
 msgid "Number of Brands to Display:"
 msgstr ""
 
-#: brands-for-woocommerce.php:721
+#: classes/Brand_Thumbnail_Widget.php:138
 msgid "Randomize Brands Display Order"
 msgstr ""
 
