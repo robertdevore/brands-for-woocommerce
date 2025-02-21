@@ -27,6 +27,9 @@ if ( ! defined( 'WPINC' ) ) {
     die;
 }
 
+// Add the widget class.
+require 'classes/Brand_Thumbnail_Widget.php';
+
 // Add the Plugin Update Checker.
 require 'vendor/plugin-update-checker/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
@@ -90,7 +93,6 @@ class Brands_For_WooCommerce {
         add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_media_uploader' ] );
         add_action( 'admin_footer', [ $this, 'brand_image_upload_script' ] );
         add_action( 'woocommerce_archive_description', [ $this, 'display_brand_archive_header' ], 10 );
-        add_action( 'admin_init', [ $this, 'modify_brand_table' ] );
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_public_styles' ] );
 
         // Shortcodes.
@@ -280,23 +282,23 @@ class Brands_For_WooCommerce {
      * @return void
      */
     public function register_brand_taxonomy() {
-        $labels = array(
+        $labels = [
             'name'          => _x( 'Brands', 'taxonomy general name', 'brands-for-woocommerce' ),
             'singular_name' => _x( 'Brand', 'taxonomy singular name', 'brands-for-woocommerce' ),
             'search_items'  => esc_html__( 'Search Brands', 'brands-for-woocommerce' ),
             'all_items'     => esc_html__( 'All Brands', 'brands-for-woocommerce' ),
             'edit_item'     => esc_html__( 'Edit Brand', 'brands-for-woocommerce' ),
             'add_new_item'  => esc_html__( 'Add New Brand', 'brands-for-woocommerce' ),
-        );
+        ];
 
-        $args = array(
+        $args = [
             'labels'            => $labels,
             'hierarchical'      => true,
             'show_ui'           => true,
             'show_in_menu'      => true,
             'show_in_nav_menus' => true,
             'rewrite'           => [ 'slug' => 'brand' ],
-        );
+        ];
 
         register_taxonomy( 'product_brand', 'product', $args );
     }
@@ -312,12 +314,12 @@ class Brands_For_WooCommerce {
     public function product_brand_shortcode( $atts ) {
         // Define and sanitize attributes.
         $atts = shortcode_atts(
-            array(
+            [
                 'columns'          => 4,
                 'show_title'       => 'true',
                 'link_image'       => 'true',
                 'show_description' => 'false',
-            ),
+            ],
             $atts,
             'product_brand'
         );
@@ -328,10 +330,10 @@ class Brands_For_WooCommerce {
 
         // Fetch brands.
         $brands = get_terms(
-            array(
+            [
                 'taxonomy'   => 'product_brand',
                 'hide_empty' => false,
-            )
+            ]
         );
 
         // Check for errors or empty results.
@@ -389,13 +391,13 @@ class Brands_For_WooCommerce {
     public function brand_products_shortcode( $atts ) {
         // Define and sanitize shortcode attributes.
         $atts = shortcode_atts(
-            array(
+            [
                 'brand'    => '',
                 'per_page' => '12',
                 'columns'  => '4',
                 'orderby'  => 'title',
                 'order'    => 'asc',
-            ),
+            ],
             $atts,
             'brand_products'
         );
@@ -534,21 +536,26 @@ class Brands_For_WooCommerce {
 
             // Display the image with optional link.
             if ( $image ) {
-                echo '<div class="product-brand">';
+                $output = '<div class="product-brand">';
                 if ( $link ) {
-                    echo '<a href="' . esc_url( $link ) . '">';
+                    $output .= '<a href="' . esc_url( $link ) . '">';
                 }
-                echo '<img src="' . esc_url( $image ) . '" alt="' . esc_attr( $brand[0]->name ) . '" class="brand-image" style="max-width: 100px; margin-bottom: 10px;">';
+                $output .= '<img src="' . esc_url( $image ) . '" alt="' . esc_attr( $brand[0]->name ) . '" class="brand-image" style="max-width: 100px; margin-bottom: 10px;">';
                 if ( $link ) {
-                    echo '</a>';
+                    $output .= '</a>';
                 }
-                echo '</div>';
+                $output .= '</div>';
+
+                echo wp_kses_post( $output );
             }
         }
     }
 
     /**
      * Register the brand thumbnails widget.
+     * 
+     * @since  1.0.0
+     * @return void
      */
     public function register_brand_widget() {
         register_widget( 'Brand_Thumbnails_Widget' );
@@ -578,23 +585,23 @@ class Brands_For_WooCommerce {
      * @return WP_REST_Response API response with brand data.
      */
     public function get_all_brands() {
-        // Fetch all terms in the 'product_brand' taxonomy
+        // Fetch all terms in the 'product_brand' taxonomy.
         $brands = get_terms(
-            array(
+            [
                 'taxonomy'   => 'product_brand',
                 'hide_empty' => false,
-            )
+            ]
         );
 
         // Check for errors and prepare the response.
         if ( ! is_wp_error( $brands ) ) {
-            $brands_data = array();
+            $brands_data = [];
 
             foreach ( $brands as $brand ) {
                 $brand_image = get_term_meta( $brand->term_id, 'brand_image', true );
                 $brand_link  = get_term_link( $brand );
 
-                $brands_data[] = array(
+                $brands_data[] = [
                     'id'          => $brand->term_id,
                     'name'        => $brand->name,
                     'description' => $brand->description,
@@ -602,168 +609,13 @@ class Brands_For_WooCommerce {
                     'count'       => $brand->count,
                     'image'       => $brand_image ? esc_url( $brand_image ) : null,
                     'url'         => ! is_wp_error( $brand_link ) ? esc_url( $brand_link ) : null,
-                );
+                ];
             }
 
             return rest_ensure_response( $brands_data );
         }
 
-        return rest_ensure_response( array() );
-    }
-}
-
-/**
- * Class Brand_Thumbnails_Widget
- * 
- * Defines the brand thumbnails widget for displaying brands with thumbnails, names, and descriptions.
- * 
- * @since  1.0.0
- */
-class Brand_Thumbnails_Widget extends WP_Widget {
-
-    /**
-     * Constructor for the widget.
-     * 
-     * @since  1.0.0
-     * @return void
-     */
-    public function __construct() {
-        parent::__construct(
-            'brand_thumbnails_widget',
-            esc_html__( 'Brand Thumbnails Widget', 'brands-for-woocommerce' ),
-            [
-                'description' => esc_html__( 'Displays brand thumbnails with options to show/hide brand names and descriptions, limit results, and randomize output.', 'brands-for-woocommerce' )
-            ]
-        );
-    }
-
-    /**
-     * Render the widget output on the frontend.
-     *
-     * @param array $args     Widget arguments.
-     * @param array $instance Widget instance settings.
-     * 
-     * @since  1.0.0
-     * @return void
-     */
-    public function widget( $args, $instance ) {
-        echo $args['before_widget'];
-    
-        if ( ! empty( $args['before_title'] ) && ! empty( $args['after_title'] ) ) {
-            echo $args['before_title'] . esc_html__( 'Brands', 'brands-for-woocommerce' ) . $args['after_title'];
-        }
-    
-        // Fetch widget settings.
-        $show_name        = ! empty( $instance['show_name'] );
-        $show_description = ! empty( $instance['show_description'] );
-        $limit            = ! empty( $instance['limit'] ) ? absint( $instance['limit'] ) : 5;
-        $randomize        = ! empty( $instance['randomize'] );
-    
-        // Prepare arguments for retrieving brands.
-        $brands_args = [
-            'taxonomy'   => 'product_brand',
-            'hide_empty' => false,
-        ];
-    
-        $brands = get_terms( $brands_args );
-    
-        // Randomize terms if needed.
-        if ( $randomize && ! is_wp_error( $brands ) ) {
-            shuffle( $brands );
-        }
-    
-        // Limit terms after randomization.
-        if ( ! is_wp_error( $brands ) ) {
-            $brands = array_slice( $brands, 0, $limit );
-        }
-    
-        if ( ! empty( $brands ) && ! is_wp_error( $brands ) ) {
-            echo '<div class="widget-brand-thumbnails">';
-    
-            foreach ( $brands as $brand ) {
-                $image      = get_term_meta( $brand->term_id, 'brand_image', true );
-                $brand_link = get_term_link( $brand );
-    
-                echo '<div class="brand-thumbnail">';
-    
-                if ( $image ) {
-                    echo '<a href="' . esc_url( $brand_link ) . '">';
-                    echo '<img src="' . esc_url( $image ) . '" class="brand-thumbnail-image" alt="' . esc_attr( $brand->name ) . '">';
-                    echo '</a>';
-                }
-    
-                if ( $show_name ) {
-                    echo '<a href="' . esc_url( $brand_link ) . '">';
-                    echo '<p class="brand-thumbnail-name">' . esc_html( $brand->name ) . '</p>';
-                    echo '</a>';
-                }
-    
-                if ( $show_description && ! empty( $brand->description ) ) {
-                    echo '<p class="brand-thumbnail-description">' . esc_html( $brand->description ) . '</p>';
-                }
-    
-                echo '</div>';
-            }
-    
-            echo '</div>';
-        } else {
-            echo '<p>' . esc_html__( 'No brands available.', 'brands-for-woocommerce' ) . '</p>';
-        }
-    
-        echo $args['after_widget'];
-    }    
-
-    /**
-     * Render the widget settings form in the admin.
-     *
-     * @param array $instance Current widget instance settings.
-     * 
-     * @since  1.0.0
-     * @return void
-     */
-    public function form( $instance ) {
-        // Define widget settings.
-        $show_name        = isset( $instance['show_name'] ) ? (bool) $instance['show_name'] : true;
-        $show_description = isset( $instance['show_description'] ) ? (bool) $instance['show_description'] : false;
-        $limit            = isset( $instance['limit'] ) ? absint( $instance['limit'] ) : 5;
-        $randomize        = isset( $instance['randomize'] ) ? (bool) $instance['randomize'] : false;
-        ?>
-        <p>
-            <input class="checkbox" type="checkbox" <?php checked( $show_name ); ?> id="<?php echo esc_attr( $this->get_field_id( 'show_name' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'show_name' ) ); ?>" />
-            <label for="<?php echo esc_attr( $this->get_field_id( 'show_name' ) ); ?>"><?php esc_html_e( 'Show Brand Name', 'brands-for-woocommerce' ); ?></label>
-        </p>
-        <p>
-            <input class="checkbox" type="checkbox" <?php checked( $show_description ); ?> id="<?php echo esc_attr( $this->get_field_id( 'show_description' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'show_description' ) ); ?>" />
-            <label for="<?php echo esc_attr( $this->get_field_id( 'show_description' ) ); ?>"><?php esc_html_e( 'Show Brand Description', 'brands-for-woocommerce' ); ?></label>
-        </p>
-        <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"><?php esc_html_e( 'Number of Brands to Display:', 'brands-for-woocommerce' ); ?></label>
-            <input class="small-text" type="number" id="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'limit' ) ); ?>" value="<?php echo esc_attr( $limit ); ?>" min="1" />
-        </p>
-        <p>
-            <input class="checkbox" type="checkbox" <?php checked( $randomize ); ?> id="<?php echo esc_attr( $this->get_field_id( 'randomize' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'randomize' ) ); ?>" />
-            <label for="<?php echo esc_attr( $this->get_field_id( 'randomize' ) ); ?>"><?php esc_html_e( 'Randomize Brands Display Order', 'brands-for-woocommerce' ); ?></label>
-        </p>
-        <?php
-    }
-
-    /**
-     * Save widget settings.
-     *
-     * @param array $new_instance New settings.
-     * @param array $old_instance Old settings.
-     * 
-     * @since  1.0.0
-     * @return array Updated settings.
-     */
-    public function update( $new_instance, $old_instance ) {
-        $instance                     = $old_instance;
-        $instance['show_name']        = ! empty( $new_instance['show_name'] );
-        $instance['show_description'] = ! empty( $new_instance['show_description'] );
-        $instance['limit']            = ! empty( $new_instance['limit'] ) ? absint( $new_instance['limit'] ) : 5;
-        $instance['randomize']        = ! empty( $new_instance['randomize'] );
-
-        return $instance;
+        return rest_ensure_response( [] );
     }
 }
 
