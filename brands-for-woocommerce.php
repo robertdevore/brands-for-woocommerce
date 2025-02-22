@@ -12,7 +12,7 @@
   * Plugin Name: Brands for WooCommerce®
   * Description: Allows you to create and manage brands in WooCommerce®, with options to display brands as lists, thumbnails, or sidebar widgets.
   * Plugin URI:  https://github.com/robertdevore/brands-for-woocommerce/
-  * Version:     1.0.0
+  * Version:     1.0.1
   * Author:      Robert DeVore
   * Author URI:  https://robertdevore.com/
   * License:     GPL-2.0+
@@ -53,7 +53,7 @@ use RobertDevore\WPComCheck\WPComPluginHandler;
 new WPComPluginHandler( plugin_basename( __FILE__ ), 'https://robertdevore.com/why-this-plugin-doesnt-support-wordpress-com-hosting/' );
 
 // Define constants.
-define('BRANDS_FOR_WOOCOMMERCE_VERSION', '1.0.0' );
+define('BRANDS_FOR_WOOCOMMERCE_VERSION', '1.0.1' );
 
 /**
  * Load plugin text domain for translations
